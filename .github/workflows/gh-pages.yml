@@ -1,8 +1,5 @@
 name: Deploy GitHub Pages
 
-on:
-  workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
