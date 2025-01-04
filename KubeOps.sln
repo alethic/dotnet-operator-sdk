@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{DC
 		docfx.json = docfx.json
 		global.json = global.json
 		KubeOps.dist.msbuildproj = KubeOps.dist.msbuildproj
+		.github\workflows\KubeOps.yml = .github\workflows\KubeOps.yml
 		LICENSE = LICENSE
 		README.md = README.md
 		renovate.json = renovate.json
