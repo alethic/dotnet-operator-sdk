@@ -63,7 +63,7 @@ jobs:
           /p:PackageProjectUrl="${env:GITHUB_SERVER_URL}/${env:GITHUB_REPOSITORY}" `
           /p:BuildInParallel=true `
           /p:ContinuousIntegrationBuild=true `
-          KubeOps.msbuildproj
+          KubeOps.dist.msbuildproj
     - name: Upload MSBuild Log
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
