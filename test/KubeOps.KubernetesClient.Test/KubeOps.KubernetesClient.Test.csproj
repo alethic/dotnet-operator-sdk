@@ -1,5 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\KubeOps.KubernetesClient\KubeOps.KubernetesClient.csproj" />
-  </ItemGroup>
+    <Import Project="..\..\Directory.Build.tests.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0</TargetFrameworks>
+        <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\KubeOps.KubernetesClient\KubeOps.KubernetesClient.csproj" />
+    </ItemGroup>
 </Project>

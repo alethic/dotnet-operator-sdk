@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\Directory.Build.tests.props" />
+    
     <PropertyGroup>
+        <TargetFrameworks>net8.0</TargetFrameworks>
         <EnablePreviewFeatures>true</EnablePreviewFeatures>
     </PropertyGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\..\src\KubeOps.Cli\KubeOps.Cli.csproj" />
-    </ItemGroup>
+
     <ItemGroup>
         <PackageReference Include="KubernetesClient" Version="14.0.12"/>
         <PackageReference Include="Microsoft.CodeAnalysis" Version="4.9.2" />
@@ -13,4 +14,9 @@
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.9.2" />
         <PackageReference Include="Spectre.Console.Testing" Version="0.49.1" />
     </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\KubeOps.Cli\KubeOps.Cli.csproj" />
+    </ItemGroup>
+    
 </Project>

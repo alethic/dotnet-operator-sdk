@@ -1,4 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\Directory.Build.tests.props" />
+    
+    <PropertyGroup>
+        <TargetFrameworks>net8.0</TargetFrameworks>
+        <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    </PropertyGroup>
+
     <ItemGroup>
         <ProjectReference Include="..\..\src\KubeOps.Generator\KubeOps.Generator.csproj"/>
     </ItemGroup>

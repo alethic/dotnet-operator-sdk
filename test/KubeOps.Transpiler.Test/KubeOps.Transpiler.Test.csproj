@@ -1,4 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\Directory.Build.tests.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0</TargetFrameworks>
+        <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="KubernetesClient" Version="14.0.12" />
@@ -11,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\KubeOps.Transpiler\KubeOps.Transpiler.csproj" />
+        <ProjectReference Include="..\..\src\KubeOps.Transpiler\KubeOps.Transpiler.csproj" />
     </ItemGroup>
 
 </Project>

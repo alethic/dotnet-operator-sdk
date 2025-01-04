@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <TestTarget Include="..\..\test\KubeOps.Cli.Test\KubeOps.Cli.Test.csproj" TargetFramework="net8.0" />
+        <TestTarget Include="..\..\test\KubeOps.Generator.Test\KubeOps.Generator.Test.csproj" TargetFramework="net8.0" />
+        <TestTarget Include="..\..\test\KubeOps.KubernetesClient.Test\KubeOps.KubernetesClient.Test.csproj" TargetFramework="net8.0" />
+        <TestTarget Include="..\..\test\KubeOps.Operator.Test\KubeOps.Operator.Test.csproj" TargetFramework="net8.0" />
+        <TestTarget Include="..\..\test\KubeOps.Operator.Web.Test\KubeOps.Operator.Web.Test.csproj" TargetFramework="net8.0" />
+        <TestTarget Include="..\..\test\KubeOps.Transpiler.Test\KubeOps.Transpiler.Test.csproj" TargetFramework="net8.0" />
+    </ItemGroup>
+
+    <!-- Runs once per TFM/RID combination to generate individual output. -->
+    <Target Name="GetCopyToOutputDirectoryItemsByTestTarget" BeforeTargets="BeforeBuild">
+        <ItemGroup>
+            <PublishProjectReference Include="@(TestTarget)">
+                <SetTargetFramework>TargetFramework=%(TestTarget.TargetFramework)</SetTargetFramework>
+                <PublishTargetPath>%(TestTarget.Filename)\%(TestTarget.TargetFramework)</PublishTargetPath>
+                <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            </PublishProjectReference>
+        </ItemGroup>
+    </Target>
+
+</Project>

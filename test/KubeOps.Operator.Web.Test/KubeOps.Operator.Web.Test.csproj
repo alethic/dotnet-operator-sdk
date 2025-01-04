@@ -1,4 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\Directory.Build.tests.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0</TargetFrameworks>
+        <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    </PropertyGroup>
+    
     <ItemGroup>
         <PackageReference Include="KubernetesClient" Version="14.0.12" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.8"/>
@@ -9,10 +16,12 @@
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.9.2" />
         <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.9.2" />
     </ItemGroup>
+    
     <ItemGroup>
         <ProjectReference Include="..\..\src\KubeOps.Operator.Web\KubeOps.Operator.Web.csproj"/>
         <ProjectReference Include="..\..\src\KubeOps.Transpiler\KubeOps.Transpiler.csproj"/>
     </ItemGroup>
+    
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App"/>
     </ItemGroup>
