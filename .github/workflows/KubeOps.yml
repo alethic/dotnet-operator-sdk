@@ -6,6 +6,7 @@ on:
     branches:
     - main
     - develop
+    - reconf
   pull_request:
     branches:
     - main
